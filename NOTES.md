@@ -4,11 +4,21 @@ Leow's Solutions
 1. Bug: "no fillings" text is never displayed when cookies have no fillings
 
 Solution:
-- create an if else statement, when cookies have no filling, show "no fillings" text, if cookies have filling, proceed
+- create an if else statement, when cookies have no filling, show "no fillings" error, if cookies have filling, proceed to save the cookie
 
 2. Feature: Cookies should actually be cooked
    We lazily added to Cookie: def ready?; true; end
    But, the cookies are not actually ready instantly! When a cookie is placed in the oven, we need to trigger a background cooking worker to cook the cookies and update their state after a couple minutes of "cooking"
+
+Solution:
+- when cookie is saved in the oven
+- trigger a timer in ruby and show state: "cooking"
+- "refresh the page to show latest status"
+- show "done" after a few minutes
+- use timestamp
+- record "created_at" timestamp
+- direct user to "check oven" button first, remove "retrieve" for now
+- "check oven" button will compare the time created_at with the current time, if it is 2 minutes and above, direct user to "retrieve" button
 
 3. Feature: As a bakery owner, I should see the oven page update automatically when the cookies are ready
    Given I have unfinished cookies in an oven
