@@ -20,6 +20,11 @@ Solution:
 - direct user to "check oven" button first, remove "retrieve" for now
 - "check oven" button will compare the time created_at with the current time, if it is 2 minutes and above, direct user to "retrieve" button
 
+Solution 2:
+- make changes to def ready? method
+- compare time between created_at and "check oven", maybe use method updated_at?
+
+
 3. Feature: As a bakery owner, I should see the oven page update automatically when the cookies are ready
    Given I have unfinished cookies in an oven
    And I am on the oven page
@@ -37,3 +42,4 @@ Solution:
 
 5. Feature: As a bakery owner using the mobile web, I want my "Prepare Cookie" button to be first
    Since the Prepare Cookie button is really important, when the bakery owner is using a mobile screen, the prepare cookie button should be the first thing on the oven page. But, on non-mobile browsers, the button should remain where it is currently.
+   - isnt this the first thing on the oven page already?
