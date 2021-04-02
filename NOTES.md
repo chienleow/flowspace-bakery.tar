@@ -18,9 +18,13 @@ Step 1:
 Step 2:
    - frontend: "check oven" button, user click on it to check status
    - backend: record "updated_at" timestamp when the "check oven" button is clicked
-   - backend: a method to compare "created_at" and "updated_at" timestamps, if it is more than lets say 2 minutes
+   - backend: a method to compare "created_at" and "updated_at" timestamps
 Step 3:
+   - backend: if time difference is more than 2 minutes
    - frontend: display state "done"
+   - backend: if time difference is less than 2 minutes
+   - frontend: display state "still cooking"
+   - frontend: the "retrieve cookie" button will be hidden until the timestamp difference is more than 2 minutes
 
 3. Feature: As a bakery owner, I should see the oven page update automatically when the cookies are ready
    Given I have unfinished cookies in an oven
