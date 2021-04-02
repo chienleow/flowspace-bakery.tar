@@ -12,8 +12,13 @@ class CookiesController < ApplicationController
 
   def create
     @oven = current_user.ovens.find_by!(id: params[:oven_id])
+    # byebug
     @cookie = @oven.create_cookie!(cookie_params)
-    redirect_to oven_path(@oven)
+    if @cookie.save
+      redirect_to oven_path(@oven)
+    else
+      render :new
+    end
   end
 
   private

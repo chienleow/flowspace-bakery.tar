@@ -1,6 +1,12 @@
 %h3 New Cookie for oven '#{@oven.name}'
 
 = form_for [@oven, @cookie] do |f|
+
+  - if @cookie.errors.any?
+    %ul 
+      - @cookie.errors.full_messages.each do |msg|
+        %li= msg
+
   .row
     .small-8.columns
       = f.label :fillings
