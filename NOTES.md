@@ -11,15 +11,15 @@ Pseudo Code Solution:
    But, the cookies are not actually ready instantly! When a cookie is placed in the oven, we need to trigger a background cooking worker to cook the cookies and update their state after a couple minutes of "cooking"
 
 Pseudo Code Solution (timestamp):
-Step 1:
+- Step 1:
    - when cookie is saved in the oven
    - frontend: display state in haml: "cooking"
    - backend: record "created_at" timestamp when cookie is saved in the oven
-Step 2:
+- Step 2:
    - frontend: "check oven" button, user click on it to check status
    - backend: record "updated_at" timestamp when the "check oven" button is clicked
    - backend: a method to compare "created_at" and "updated_at" timestamps
-Step 3:
+- Step 3:
    - backend: if time difference is more than 2 minutes
    - frontend: display state "done"
    - backend: if time difference is less than 2 minutes
