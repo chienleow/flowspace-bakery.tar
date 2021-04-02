@@ -3,24 +3,28 @@ Leow's Solutions
 
 1. Bug: "no fillings" text is never displayed when cookies have no fillings
 
-Solution:
+Pseudo Code Solution:
 - create an if else statement, when cookies have no filling, show "no fillings" error, if cookies have filling, proceed to save the cookie
 
 2. Feature: Cookies should actually be cooked
    We lazily added to Cookie: def ready?; true; end
    But, the cookies are not actually ready instantly! When a cookie is placed in the oven, we need to trigger a background cooking worker to cook the cookies and update their state after a couple minutes of "cooking"
 
-Solution:
-- when cookie is saved in the oven
-- trigger a timer in ruby and show state: "cooking"
-- "refresh the page to show latest status"
-- show "done" after a few minutes
-- use timestamp
-- record "created_at" timestamp
-- direct user to "check oven" button first, remove "retrieve" for now
-- "check oven" button will compare the time created_at with the current time, if it is 2 minutes and above, direct user to "retrieve" button
+Pseudo Code Solution (timestamp):
+Step 1:
+   - when cookie is saved in the oven
+   - frontend: display state in haml: "cooking"
+   - backend: record "created_at" timestamp when cookie is saved in the oven
+   - frontend: "check oven" button, user click on it to check status
+   - backend: record "updated_at" timestamp when the "check oven" button is clicked
+   - backend: a method to compare "created_at" and "updated_at" timestamps, if it is more than lets say 2 minutes
+   - frontend:
+   - direct user to "check oven" button first, remove "retrieve" for now
+   - "check oven" button will compare the time created_at with the current time, if it is 2 minutes and above, direct user to "retrieve" button
+   - "refresh the page to show latest status"
+   - show "done" after a few minutes
 
-Solution 2:
+Pseudo Code Solution 2:
 - make changes to def ready? method
 - compare time between created_at and "check oven", maybe use method updated_at?
 
