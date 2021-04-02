@@ -15,19 +15,12 @@ Step 1:
    - when cookie is saved in the oven
    - frontend: display state in haml: "cooking"
    - backend: record "created_at" timestamp when cookie is saved in the oven
+Step 2:
    - frontend: "check oven" button, user click on it to check status
    - backend: record "updated_at" timestamp when the "check oven" button is clicked
    - backend: a method to compare "created_at" and "updated_at" timestamps, if it is more than lets say 2 minutes
-   - frontend:
-   - direct user to "check oven" button first, remove "retrieve" for now
-   - "check oven" button will compare the time created_at with the current time, if it is 2 minutes and above, direct user to "retrieve" button
-   - "refresh the page to show latest status"
-   - show "done" after a few minutes
-
-Pseudo Code Solution 2:
-- make changes to def ready? method
-- compare time between created_at and "check oven", maybe use method updated_at?
-
+Step 3:
+   - frontend: display state "done"
 
 3. Feature: As a bakery owner, I should see the oven page update automatically when the cookies are ready
    Given I have unfinished cookies in an oven
@@ -37,8 +30,9 @@ Pseudo Code Solution 2:
    Then I should see that the cookies are ready
    Note: Periodic polling is acceptable, but only the relevant part of the page should update
 
-   Solution:
-   - polling in Rails
+Pseudo Code Solution (polling in Rails):
+   Solution 1: - use JS, update the page so changes can be reflected
+   Solution 2: - use Ruby gem(render async)
 
 4. Feature: As a bakery owner, I should be able to place a sheet with multiple cookies into an oven
    Given I have an oven
