@@ -35,8 +35,8 @@ Pseudo Code Solution (timestamp):
    Note: Periodic polling is acceptable, but only the relevant part of the page should update
 
 Pseudo Code Solution (polling in Rails):
-   Solution 1: - use JS, update the page so changes can be reflected
-   Solution 2: - use Ruby gem(render async)
+   - Solution 1: - use JS, update the page so changes can be reflected
+   - Solution 2: - use Ruby gem(render async)
 
 ### 4. Feature: As a bakery owner, I should be able to place a sheet with multiple cookies into an oven
    Given I have an oven
@@ -50,7 +50,7 @@ Pseudo Code Solution:
 - so that we can build multiple cookies at once
 - Column to enter number of cookies, and the fillings
 
-5. Feature: As a bakery owner using the mobile web, I want my "Prepare Cookie" button to be first
+### 5. Feature: As a bakery owner using the mobile web, I want my "Prepare Cookie" button to be first
    Since the Prepare Cookie button is really important, when the bakery owner is using a mobile screen, the prepare cookie button should be the first thing on the oven page. But, on non-mobile browsers, the button should remain where it is currently.
 
 Pseudo Code Solution:
