@@ -45,6 +45,14 @@ Pseudo Code Solution (polling in Rails):
    When the batch of cookies is finished cooking
    Then I should be able to remove the cookies into my store inventory
 
+Pseudo Code Solution:
+- remove the if else statement in new method in cookies_controller
+- so that we can build multiple cookies at once
+- Column to enter number of cookies, and the fillings
+
 5. Feature: As a bakery owner using the mobile web, I want my "Prepare Cookie" button to be first
    Since the Prepare Cookie button is really important, when the bakery owner is using a mobile screen, the prepare cookie button should be the first thing on the oven page. But, on non-mobile browsers, the button should remain where it is currently.
-   - isnt this the first thing on the oven page already?
+
+Pseudo Code Solution:
+- detect screensize to adjust the button accordingly
+- use respond_to to detect devices
