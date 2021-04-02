@@ -33,6 +33,9 @@ Solution 2:
    Then I should see that the cookies are ready
    Note: Periodic polling is acceptable, but only the relevant part of the page should update
 
+   Solution:
+   - polling in Rails
+
 4. Feature: As a bakery owner, I should be able to place a sheet with multiple cookies into an oven
    Given I have an oven
    When I am on the oven page
